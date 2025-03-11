@@ -1,0 +1,41 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pdb
+*.log
+
+# Virtual environment
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+*.sqlite3
+*.pyc
+*.pyo
+*.pyd
+
+# Django static files (optional)
+static/
+
+# IDEs
+.idea/
+.vscode/
+
+# Docker
+*.docker/
+
+# Other files
+*.log
+*.bak
+*.swp
