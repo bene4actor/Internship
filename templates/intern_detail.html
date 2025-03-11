@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о стажере</title>
+</head>
+<body>
+    <h1>Детали стажера: {{ intern.fullname }}</h1>
+    <p>Адрес: {{ intern.address }}</p>
+    <p>Должность: {{ intern.position }}</p>
+    <p>Контактные данные: {{ intern.contact_info }}</p>
+    <p>Email: {{ intern.email }}</p>
+    <p>Дата начала: {{ intern.start_date }}</p>
+    <p>Дата окончания: {{ intern.end_date }}</p>
+    <!-- Можно добавить другие поля, которые нужны для отображения -->
+
+    <a href="{% url 'intern_list' %}">Назад к списку стажеров</a>
+</body>
+</html>

@@ -20,6 +20,7 @@ def generate_documents(request, intern):
     statement_editor.docx_replace(
         fullname=intern.fullname,
         address=intern.address,
+        id=intern.id,
         position=intern.position,
         email=intern.email,
         contact_info=intern.contact_info,
@@ -31,11 +32,13 @@ def generate_documents(request, intern):
     nda_editor = WordEditor(file_name=nda_path)
     nda_editor.docx_replace(
         fullname=intern.fullname,
+        id=intern.id,
         inn=intern.inn,
         passport=intern.passport,
         given_organ=intern.given_organ,
         address=intern.address,
         contact_info=intern.contact_info,
+        application_date=intern.application_date,
     )
 
     # Создание zip-архива в памяти

@@ -1,0 +1,45 @@
+<!-- intern_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список стажеров</title>
+</head>
+<body>
+    <h1>Список стажеров</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Email</th>
+                <th>ИНН</th>
+                <th>Паспорт</th>
+                <th>Орган выдачи</th>
+                <th>Адрес</th>
+                <th>Должность</th>
+                <th>Контактные данные</th>
+                <th>Дата начала</th>
+                <th>Дата окончания</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for intern in interns %}
+            <tr>
+                <td>{{ intern.fullname }}</td>
+                <td>{{ intern.email }}</td>
+                <td>{{ intern.inn }}</td>
+                <td>{{ intern.passport }}</td>
+                <td>{{ intern.given_organ }}</td>
+                <td>{{ intern.address }}</td>
+                <td>{{ intern.position }}</td>
+                <td>{{ intern.contact_info }}</td>
+                <td>{{ intern.start_date }}</td>
+                <td>{{ intern.end_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

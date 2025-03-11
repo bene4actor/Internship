@@ -4,13 +4,23 @@ from django.shortcuts import get_object_or_404
 from django.urls import path, reverse
 from django.utils.html import format_html
 from django.http import HttpResponseRedirect
+
+from .forms import InternAdminForm
 from .models import Intern
 from .utils import generate_documents
+from django.contrib.admin import forms
+
 
 
 class InternAdmin(admin.ModelAdmin):
     list_display = ("fullname", "email", "contact_info", "end_date", "start_date", "download_documents_button")
-
+    form = InternAdminForm
+    fieldsets = (
+        (None, {
+            'fields': ('fullname', 'email', 'inn', 'birth_date', 'contact_info', 'start_date', 'end_date', 'passport',
+                       'given_organ', 'address', 'position', 'application_date')
+        }),
+    )
     def download_documents_button(self, obj):
         # Генерируем правильный URL с помощью reverse
         url = reverse('admin:interns_intern_download', args=[obj.id])

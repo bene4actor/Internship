@@ -1,4 +1,8 @@
+import re
+
+from django.core.exceptions import ValidationError
 from django.db import models
+
 
 class Intern(models.Model):
     fullname = models.CharField('ФИО', max_length=255, null=True, blank=True)
@@ -9,6 +13,7 @@ class Intern(models.Model):
     address = models.CharField("Адрес", max_length=255, null=True, blank=True)
     position = models.CharField("Должность", max_length=255, null=True, blank=True)
     contact_info = models.TextField('Контактные данные', null=True, blank=True)
+    birth_date = models.DateField("Дата рождения", null=True, blank=True)
     start_date = models.DateField('Дата начала', null=True, blank=True)
     end_date = models.DateField('Дата окончания', null=True, blank=True)
     application_date = models.DateField('Дата подачи заявления', null=True, blank=True)
