@@ -15,7 +15,7 @@ def generate_documents(request, intern):
     statement_path = "templates/Заявление на стажировку.docx"
     nda_path = "templates/NDA.docx"
 
-    # Создаем экземпляр редактора для документа
+    # Создаем экземпляр редактора для заявлени
     statement_editor = WordEditor(file_name=statement_path)
     statement_editor.docx_replace(
         fullname=intern.fullname,
@@ -27,7 +27,7 @@ def generate_documents(request, intern):
         end_date=intern.end_date,
         application_date=intern.application_date,
     )
-    #Создание nda
+    # Создаем экземпляр редактора для nda
     nda_editor = WordEditor(file_name=nda_path)
     nda_editor.docx_replace(
         fullname=intern.fullname,
