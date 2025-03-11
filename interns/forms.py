@@ -15,15 +15,6 @@ class InternshipForm(forms.Form):
     email = forms.EmailField(label='Электронная почта')
 
 
-import re
-from datetime import datetime
-
-from django import forms
-from django.core.exceptions import ValidationError
-
-from interns.models import Intern
-
-
 class InternAdminForm(forms.ModelForm):
     class Meta:
         model = Intern
